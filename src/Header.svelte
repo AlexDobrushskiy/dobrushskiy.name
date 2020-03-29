@@ -1,5 +1,6 @@
 <script>
-  import Logo from '../assets/logo.svg';
+  import Logo from "../assets/logo.svg";
+  import Menu from "./Header/Menu.svelte";
 </script>
 
 <style lang="scss">
@@ -7,22 +8,17 @@
     display: flex;
     flex-direction: row;
   }
-  .header-menu {
-    ul {
-      list-style-type: none;
+  .logo {
+    margin: 19px 0 0 46px;
+    img {
+      height: 116px;
     }
   }
 </style>
 
 <div class="header">
-    <div class="logo">
-      <img src={Logo} alt="">
-    </div>
-    <div class="header-menu">
-      <ul>
-      <li>
-
-</li>
-</ul>
-    </div>
+  <div class="logo">
+    <img src={Logo} alt="" />
+  </div>
+  <Menu/>
 </div>
