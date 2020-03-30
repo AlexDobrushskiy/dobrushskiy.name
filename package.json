@@ -1,5 +1,5 @@
 {
-  "name": "svelte-app",
+  "name": "dobrushskiy.name",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
@@ -17,6 +17,9 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "fa-svelte": "^3.1.0",
     "node-sass": "^4.13.1",
     "sirv-cli": "^0.4.4",
     "svelte-preprocess": "^3.6.0"

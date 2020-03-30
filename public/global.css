@@ -1,8 +1,13 @@
 :root {
-  --text-color-1: #171718;
-  --text-color-2: #13358c;
+  --dark-grey: #171718;
+  --light-navy: #13358c;
+  --cool-grey: #afaeb1;
+  --white: #ffffff;
+  --black: #000000;
+  --light-blue-grey: #cfc1e6;
+  --greyish: #acacac;
+  --pinkish-grey: #c4c4c4;
 }
-
 body {
     margin: 0;
     font-family: Roboto, sans-serif;
