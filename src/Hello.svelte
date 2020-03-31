@@ -36,7 +36,7 @@
     padding-left: 148px;
     padding-right: 132px;
     padding-top: 58px;
-    height: 745px;
+    height: 685px;
     h1, h3 {
       margin: 0 20px 0 0;
       font-weight: bold;
