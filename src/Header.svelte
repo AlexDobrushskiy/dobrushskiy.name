@@ -8,8 +8,13 @@
 
 <style lang="scss">
   .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     flex-direction: row;
+    background: var(--white);
+    z-index: 3;
   }
 
   .logo {

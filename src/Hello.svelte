@@ -6,24 +6,29 @@
   $image-width: 462px;
 
   .main {
-    width: calc(100% - 77px);
-    padding-left: 77px;
-    position: relative;
+    display: flex;
+    /*width: calc(100% - 77px);*/
+    /*padding-left: 77px;*/
+    /*position: relative;*/
   }
 
   .image-frame {
-    position: absolute;
+    margin-left: calc(27px - #{$image-width});
+    position: relative;
     border-radius: 100px;
+    min-width: 462px;
     width: $image-width;
     height: $image-width;
     border: solid 1px var(--light-navy);
-    z-index: 2;
+    /*z-index: 2;*/
   }
 
   .image-wrapper {
-    position: absolute;
+    margin-left: 50px;
+    position: relative;
+    width: $image-width;
+    height: $image-width;
     top: 26px;
-    left: 50px;
   }
 
   img {
@@ -32,7 +37,7 @@
 
   .content-block {
     color: var(--light-navy);
-    margin-left: calc(#{$image-width} - 50px);
+    margin-left: -50px;
     padding-left: 148px;
     padding-right: 132px;
     padding-top: 58px;
@@ -58,10 +63,10 @@
   }
 </style>
 <div class="main">
-  <div class="image-frame"></div>
   <div class="image-wrapper">
     <img src={Photo} alt="photo">
   </div>
+  <div class="image-frame"></div>
   <div class="content-block" style="background-image: url({BgImage})">
     <h3>Hello! My name is</h3>
     <h1>Alex Dobrushskiy</h1>
