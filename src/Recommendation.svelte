@@ -6,7 +6,7 @@
 
   $image-width: 300px;
   .main {
-    height: 777px;
+    min-height: 777px;
     background-position: 68px;
     background-repeat: no-repeat;
     background-size: calc(100% - 50px);

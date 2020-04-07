@@ -2,6 +2,7 @@
   import Header from './Header.svelte';
   import Hello from './Hello.svelte';
   import Recommendation from './Recommendation.svelte';
+  import Skills from './Skills.svelte';
 </script>
 
 
@@ -13,6 +14,7 @@
 
 <Header/>
 <div class="content">
-<!--  <Hello/>-->
+  <Hello/>
   <Recommendation/>
+  <Skills/>
 </div>

@@ -7,6 +7,9 @@
   --light-blue-grey: #cfc1e6;
   --greyish: #acacac;
   --pinkish-grey: #c4c4c4;
+  --text-color-2: #4f91ce;
+  --line-grey: #ececec;
+  --line-blue: #5394ce;
 }
 body {
     margin: 0;
