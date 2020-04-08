@@ -77,7 +77,7 @@
     }
   }
 </style>
-<div class="main" style="background-image: url({BgImage})">
+<div class="main" style="background-image: url({BgImage})" id="id-skills">
   <h1>Primary Skills</h1>
   <div class="skillbox">
     <div class="col">

@@ -1,10 +1,48 @@
 <script>
-  let menuItems = ['Summary', 'Skills', 'Recommendations', 'Contacts'];
+  let menuItems = ['Summary', 'Recommendations', 'Skills', 'Contacts'];
   let activeMenuItem = 0;
   const onClick = e => {
     console.log('Taksa');
   };
   import Circles from '../../assets/circles.png';
+  import * as animateScroll from "svelte-scrollto";
+  const verticalOffset = 145;
+
+  const getYPosition = elId => {
+    return document.getElementById(elId).getBoundingClientRect().y;
+  };
+
+  const onLinkClick = (idx) => {
+    console.log('taksa');
+    activeMenuItem = idx;
+    switch (idx) {
+      case 0:
+        animateScroll.scrollToTop();
+        break;
+      case 1:
+        animateScroll.scrollTo({element: '#id-recommendation', offset: -verticalOffset});
+        break;
+      case 2:
+        animateScroll.scrollTo({element: '#id-skills', offset: -verticalOffset});
+        break;
+      default:
+        break;
+    }
+  };
+
+  const onScroll = (e) => {
+    const position = window.scrollY;
+    const recommendationPosition = getYPosition('id-recommendation');
+    const skillsPosition = getYPosition('id-skills');
+    if (position < recommendationPosition+600) {
+      activeMenuItem = 0;
+    } else if (position >= recommendationPosition && position < skillsPosition+600) {
+      activeMenuItem = 1;
+    } else if (position >= skillsPosition) {
+      activeMenuItem = 2;
+    }
+
+  }
 </script>
 
 <style lang="scss">
@@ -56,12 +94,14 @@
   }
 </style>
 
+<svelte:window on:scroll={onScroll}/>
+
 <div class="header-menu" style="background-image: url({Circles})">
   <ul>
       {#each menuItems as item, idx}
         <li
           class={idx === activeMenuItem ? 'active' : ''}
-          on:click={() => (activeMenuItem = idx)}>
+          on:click={() => onLinkClick(idx)}>
             {item}
         </li>
       {/each}

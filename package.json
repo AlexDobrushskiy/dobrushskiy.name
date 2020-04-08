@@ -22,6 +22,7 @@
     "fa-svelte": "^3.1.0",
     "node-sass": "^4.13.1",
     "sirv-cli": "^0.4.4",
-    "svelte-preprocess": "^3.6.0"
+    "svelte-preprocess": "^3.6.0",
+    "svelte-scrollto": "^0.1.1"
   }
 }

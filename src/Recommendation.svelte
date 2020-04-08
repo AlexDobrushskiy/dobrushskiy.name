@@ -66,7 +66,7 @@
 
 
 </style>
-<div class="main" style="background-image: url({BgImage})">
+<div class="main" style="background-image: url({BgImage})" id="id-recommendation">
   <h1>Recommendations</h1>
   <div class="content">
     <div class="image-wrapper">

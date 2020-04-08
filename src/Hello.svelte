@@ -64,7 +64,7 @@
     }
   }
 </style>
-<div class="main">
+<div class="main" id="id-hello">
   <div class="image-wrapper">
     <img src={Photo} alt="photo">
   </div>

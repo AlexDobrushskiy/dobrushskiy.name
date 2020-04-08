@@ -9,6 +9,7 @@
 <style>
   .content {
     padding-top: 140px;
+    scroll-behavior: smooth;
   }
 </style>
 
