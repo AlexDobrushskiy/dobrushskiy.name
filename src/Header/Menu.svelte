@@ -1,11 +1,10 @@
 <script>
   let menuItems = ['Summary', 'Recommendations', 'Skills', 'Contacts'];
   let activeMenuItem = 0;
-  const onClick = e => {
-    console.log('Taksa');
-  };
+  let scrollInProgress = false;
   import Circles from '../../assets/circles.png';
-  import * as animateScroll from "svelte-scrollto";
+  import * as animateScroll from 'svelte-scrollto';
+
   const verticalOffset = 145;
 
   const getYPosition = elId => {
@@ -13,17 +12,24 @@
   };
 
   const onLinkClick = (idx) => {
-    console.log('taksa');
     activeMenuItem = idx;
+    let options = {
+      offset: -verticalOffset+1,
+      onStart: () => scrollInProgress = true,
+      onDone: () => scrollInProgress = false,
+    };
     switch (idx) {
       case 0:
-        animateScroll.scrollToTop();
+        animateScroll.scrollToTop(options);
         break;
       case 1:
-        animateScroll.scrollTo({element: '#id-recommendation', offset: -verticalOffset});
+        animateScroll.scrollTo({ ...options, element: '#id-recommendation'});
         break;
       case 2:
-        animateScroll.scrollTo({element: '#id-skills', offset: -verticalOffset});
+        animateScroll.scrollTo({ ...options, element: '#id-skills' });
+        break;
+      case 3:
+        animateScroll.scrollTo({ ...options, element: '#id-contacts' });
         break;
       default:
         break;
@@ -31,18 +37,24 @@
   };
 
   const onScroll = (e) => {
-    const position = window.scrollY;
+    if (scrollInProgress) {
+      return;
+    }
+    const helloPosition = getYPosition('id-hello');
     const recommendationPosition = getYPosition('id-recommendation');
     const skillsPosition = getYPosition('id-skills');
-    if (position < recommendationPosition+600) {
-      activeMenuItem = 0;
-    } else if (position >= recommendationPosition && position < skillsPosition+600) {
-      activeMenuItem = 1;
-    } else if (position >= skillsPosition) {
-      activeMenuItem = 2;
-    }
+    const contactsPosition = getYPosition('id-contacts');
 
-  }
+    if (contactsPosition < verticalOffset) {
+      activeMenuItem = 3;
+    } else  if (skillsPosition < verticalOffset) {
+      activeMenuItem = 2;
+    } else if (recommendationPosition < verticalOffset) {
+      activeMenuItem = 1;
+    } else if (helloPosition < verticalOffset) {
+      activeMenuItem = 0;
+    }
+  };
 </script>
 
 <style lang="scss">
@@ -50,6 +62,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 0 5px;
+
     ul {
       display: flex;
       margin-bottom: 0;

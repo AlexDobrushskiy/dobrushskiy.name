@@ -3,6 +3,7 @@
   import Hello from './Hello.svelte';
   import Recommendation from './Recommendation.svelte';
   import Skills from './Skills.svelte';
+  import Contacts from './Contacts.svelte';
 </script>
 
 
@@ -18,4 +19,5 @@
   <Hello/>
   <Recommendation/>
   <Skills/>
+  <Contacts/>
 </div>
