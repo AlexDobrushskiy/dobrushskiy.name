@@ -52,6 +52,7 @@
     }
     h3 {
       font-size: 24px;
+      font-style: italic;
       /*margin-top: 58px;*/
     }
     h1 {
@@ -61,6 +62,16 @@
       color: var(--black);
       font-size: 18px;
       font-weight: 300;
+      margin-top: 20px;
+      a {
+        text-decoration: none;
+        font-weight: 500;
+        color: inherit;
+      }
+      b {
+        font-weight: 500;
+        font-style: italic;
+      }
     }
   }
 </style>
@@ -70,12 +81,10 @@
   </div>
   <div class="image-frame"></div>
   <div class="content-block" style="background-image: url({BgImage})">
-    <h3>Hello! My name is</h3>
     <h1>Alex Dobrushskiy</h1>
-    <p>I am expirienced independent software developer, who can help you and your business to be more efficient using
-      software.
-      My primary professional focus is full stack web development.
-      Please feel free to refer to my professional experience for more details.
-      I am always happy to discuss new opportunities and help you with your project, feel free to contact me.</p>
+    <h3>Software developer</h3>
+    <p>Alex is expirienced independent full stack software developer, who started his professional career in <b>2005</b> and has a great experience of working in small startups and big enterprises.<br/>
+      Today his primary professional focus is full stack web development with Python and React.
+      <br/>Alex is a member of <a href="https://www.toptal.com/resume/alex-dobrushskiy#unite-only-masterly-engineers">Toptal network</a>, containing top 3% of freelance talent.
   </div>
 </div>

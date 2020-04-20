@@ -39,6 +39,10 @@
       name: 'REST API',
       percent: 96,
     },
+    {
+      name: 'Blockchain',
+      percent: 75,
+    },
   ]
 </script>
 <style lang="scss">
@@ -60,7 +64,8 @@
   h3 {
     margin-left: $left-shift;
     margin-top: 20px;
-    font-size: 32px;
+    font-size: 30px;
+    font-style: italic;
     color: var(--light-navy);
     margin-bottom: 0;
   }
@@ -78,7 +83,7 @@
   }
 </style>
 <div class="main" style="background-image: url({BgImage})" id="id-skills">
-  <h1>Primary Skills</h1>
+  <h1>Skills</h1>
   <div class="skillbox">
     <div class="col">
       {#each skills.slice(0, 5) as skill}
@@ -87,12 +92,12 @@
 
     </div>
     <div class="col">
-      {#each skills.slice(5, 9) as skill}
+      {#each skills.slice(5, 10) as skill}
         <Skill name={skill.name} percent={skill.percent}/>
       {/each}
 
     </div>
 
   </div>
-  <h3>I write really good code</h3>
+  <h3>...And much more depending on the task</h3>
 </div>

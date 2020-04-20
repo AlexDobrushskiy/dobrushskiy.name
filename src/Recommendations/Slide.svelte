@@ -1,6 +1,7 @@
 <script>
   export let reviewData;
-
+  import Icon from 'fa-svelte';
+  import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 </script>
 <style lang="scss">
   $image-width: 300px;
@@ -42,6 +43,7 @@
     font-size: 18px;
     font-weight: 300;
     color: var(--black);
+    font-style: italic;
   }
 
   h5 {
@@ -50,6 +52,14 @@
     color: var(--dark-grey);
     font-size: 24px;
     font-weight: bold;
+    a {
+      text-decoration: none;
+      color: inherit;
+      span {
+        margin-left: 15px;
+        color: var(--line-blue)
+      }
+    }
   }
 
   }
@@ -64,9 +74,11 @@
   <div class="image-frame"></div>
   <div class="review">
 
-    <p>{reviewData.reviewContent}</p>
+    <p>"{reviewData.reviewContent}"</p>
 
-    <h5>{reviewData.author}</h5>
+    <h5>
+      <a href={reviewData.authorLinkedin}> {reviewData.author} <span><Icon icon={faLinkedin}/></span></a>
+      </h5>
     <p>{reviewData.authorPosition}</p>
 
   </div>
