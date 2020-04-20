@@ -13,12 +13,20 @@
       font-size: 24px;
       color: var(--cool-grey);
       margin-right: 25px;
+      @media (min-width: 992px) and (max-width: 1279px) {
+        margin-right: 20px;
+      }
+      @media (min-width: 768px) and (max-width: 991px) {
+        margin-right: 10px;
+      }
+
       text-decoration: none;
     }
 
     .tt {
       font-size: 24px;
       padding-bottom: 2px;
+
       svg {
         margin-bottom: -3px;
         fill: currentColor;

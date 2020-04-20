@@ -14,7 +14,7 @@
   const onLinkClick = (idx) => {
     activeMenuItem = idx;
     let options = {
-      offset: -verticalOffset+1,
+      offset: -verticalOffset + 1,
       onStart: () => scrollInProgress = true,
       onDone: () => scrollInProgress = false,
     };
@@ -23,7 +23,7 @@
         animateScroll.scrollToTop(options);
         break;
       case 1:
-        animateScroll.scrollTo({ ...options, element: '#id-recommendation'});
+        animateScroll.scrollTo({ ...options, element: '#id-recommendation' });
         break;
       case 2:
         animateScroll.scrollTo({ ...options, element: '#id-skills' });
@@ -47,7 +47,7 @@
 
     if (contactsPosition < verticalOffset) {
       activeMenuItem = 3;
-    } else  if (skillsPosition < verticalOffset) {
+    } else if (skillsPosition < verticalOffset) {
       activeMenuItem = 2;
     } else if (recommendationPosition < verticalOffset) {
       activeMenuItem = 1;
@@ -62,18 +62,37 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 0 5px;
+    @media (min-width: 768px) and (max-width: 991px) {
+      font-size: 18px;
+    }
+    @media (min-width: 992px) and (max-width: 1279px) {
+      font-size: 20px;
+    }
+    @media (min-width: 1280px) {
+      font-size: 24px;
+    }
+
 
     ul {
       display: flex;
       margin-bottom: 0;
       flex-direction: row;
       list-style-type: none;
+      padding: 0;
 
       li {
         cursor: pointer;
-        padding: 0 25px;
+        @media (min-width: 768px) and (max-width: 991px) {
+          padding: 0 5px;
+        }
+        @media (min-width: 992px) and (max-width: 1279px) {
+          padding: 0 10px;
+        }
+        @media (min-width: 1280px) {
+          padding: 0 25px;
+        }
+
         line-height: 116px;
-        font-size: 24px;
         color: var(--dark-grey);
         font-weight: bold;
 

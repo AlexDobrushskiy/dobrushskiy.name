@@ -17,13 +17,34 @@
 
   .logo {
     margin: 19px 0 0 46px;
+    @media (min-width: 768px) and (max-width: 991px) {
+      margin-left: 0;
+    }
+    @media (min-width: 992px) and (max-width: 1279px) {
+      margin-left: 20px;
+    }
 
     img {
       height: 116px;
+      @media (min-width: 768px) and (max-width: 991px) {
+        width: 250px;
+      }
+      @media (min-width: 992px) and (max-width: 1279px) {
+        /*width: 300px;*/
+      }
+      /*@media (min-width: 1280px) {*/
+      /*}*/
+
     }
   }
   .social {
     margin-top: 40px;
+    @media (min-width: 992px) and (max-width: 1279px) {
+      margin-left: 25px;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+      margin-left: 10px;
+    }
     margin-left: 50px;
   }
 </style>
