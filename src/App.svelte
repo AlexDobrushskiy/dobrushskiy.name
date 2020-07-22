@@ -17,7 +17,7 @@
 <Header/>
 <div class="content">
   <Hello/>
-  <Recommendation/>
   <Skills/>
+  <Recommendation/>
   <Contacts/>
 </div>

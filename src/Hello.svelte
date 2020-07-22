@@ -12,7 +12,6 @@
       width: $image-width;
       height: $image-width;
       border: solid 1px var(--light-navy);
-      /*z-index: 2;*/
     }
 
     .image-wrapper {
@@ -39,15 +38,35 @@
     @include image($image-width: 358px);
   }
 
-  @media (max-width: 991px) {
+  @media (min-width: 768px) and (max-width: 991px) {
     @include image($image-width: 277px);
   }
 
+  @media (max-width: 768px) {
+    @include image($image-width: 358px);
+  }
+
   .main {
-    display: flex;
-    /*width: calc(100% - 77px);*/
-    /*padding-left: 77px;*/
-    /*position: relative;*/
+    @media (min-width: 768px) {
+      display: flex;
+    }
+  }
+
+  .desktop {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .mobile {
+    @media (min-width: 768px) {
+      display: none;
+    }
+    @media (max-width: 767px) {
+      display: flex;
+      margin-top: -200px;
+    }
+
   }
 
   img {
@@ -126,10 +145,10 @@
   }
 </style>
 <div class="main" id="id-hello">
-  <div class="image-wrapper">
+  <div class="image-wrapper desktop">
     <img src={Photo} alt="photo">
   </div>
-  <div class="image-frame"></div>
+  <div class="image-frame desktop"></div>
   <div class="content-block" style="background-image: url({BgImage})">
     <h1>Alex Dobrushskiy</h1>
     <h3>Software developer</h3>
@@ -138,5 +157,11 @@
       Today his primary professional focus is full stack web development with Python and React.
       <br/>Alex is a member of <a href="https://www.toptal.com/resume/alex-dobrushskiy#unite-only-masterly-engineers">Toptal
         network</a>, containing top 3% of freelance talent.
+  </div>
+  <div class="mobile">
+    <div class="image-wrapper">
+      <img src={Photo} alt="photo">
+    </div>
+    <div class="image-frame"></div>
   </div>
 </div>

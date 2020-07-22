@@ -1,5 +1,5 @@
 <script>
-  let menuItems = ['Summary', 'Recommendations', 'Skills', 'Contacts'];
+  let menuItems = ['Summary', 'Skills', 'Recommendations', 'Contacts'];
   let activeMenuItem = 0;
   let scrollInProgress = false;
   import Circles from '../../assets/circles.png';
@@ -23,10 +23,10 @@
         animateScroll.scrollToTop(options);
         break;
       case 1:
-        animateScroll.scrollTo({ ...options, element: '#id-recommendation' });
+        animateScroll.scrollTo({ ...options, element: '#id-skills' });
         break;
       case 2:
-        animateScroll.scrollTo({ ...options, element: '#id-skills' });
+        animateScroll.scrollTo({ ...options, element: '#id-recommendation' });
         break;
       case 3:
         animateScroll.scrollTo({ ...options, element: '#id-contacts' });
@@ -47,9 +47,9 @@
 
     if (contactsPosition < verticalOffset) {
       activeMenuItem = 3;
-    } else if (skillsPosition < verticalOffset) {
-      activeMenuItem = 2;
     } else if (recommendationPosition < verticalOffset) {
+      activeMenuItem = 2;
+    } else if (skillsPosition < verticalOffset) {
       activeMenuItem = 1;
     } else if (helloPosition < verticalOffset) {
       activeMenuItem = 0;
@@ -59,9 +59,14 @@
 
 <style lang="scss">
   .header-menu {
+    @media (max-width: 767px) {
+      display: none;
+    }
+
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 0 5px;
+
     @media (min-width: 768px) and (max-width: 991px) {
       font-size: 18px;
     }

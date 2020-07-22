@@ -2,6 +2,7 @@
   import Photo from '../assets/photo.jpg';
   import BgImage from '../assets/bg1.jpg';
   import Skill from './Skill.svelte';
+
   let skills = [
     {
       name: 'Python',
@@ -43,7 +44,7 @@
       name: 'Blockchain',
       percent: 75,
     },
-  ]
+  ];
 </script>
 <style lang="scss">
   $left-shift: 68px;
@@ -54,6 +55,7 @@
     background-repeat: no-repeat;
     background-size: calc(100% - 50px);
   }
+
   h1 {
     margin-left: $left-shift;
     margin-top: 20px;
@@ -61,6 +63,7 @@
     color: var(--light-navy);
     margin-bottom: 0;
   }
+
   h3 {
     margin-left: $left-shift;
     margin-top: 20px;
@@ -77,26 +80,52 @@
     width: 60%;
     min-width: 600px;
     justify-content: space-between;
+
     .col {
       width: 45%;
     }
   }
+  .desktop {
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+  }
+  .mobile {
+    @media (min-width: 768px) {
+      display: none;
+    }
+    .col {
+      width: 70%;
+    }
+
+  }
 </style>
 <div class="main" style="background-image: url({BgImage})" id="id-skills">
   <h1>Skills</h1>
-  <div class="skillbox">
-    <div class="col">
-      {#each skills.slice(0, 5) as skill}
-        <Skill name={skill.name} percent={skill.percent}/>
-      {/each}
+  <div class="skillbox desktop">
+      <div class="col">
+          {#each skills.slice(0, 5) as skill}
+            <Skill name={skill.name} percent={skill.percent}/>
+          {/each}
+
+      </div>
+      <div class="col">
+          {#each skills.slice(5, 10) as skill}
+            <Skill name={skill.name} percent={skill.percent}/>
+          {/each}
+
 
     </div>
-    <div class="col">
-      {#each skills.slice(5, 10) as skill}
-        <Skill name={skill.name} percent={skill.percent}/>
-      {/each}
 
-    </div>
+  </div>
+  <div class="skillbox mobile">
+      <div class="col">
+          {#each skills as skill}
+            <Skill name={skill.name} percent={skill.percent}/>
+          {/each}
+
+      </div>
 
   </div>
   <h3>...And much more depending on the task</h3>

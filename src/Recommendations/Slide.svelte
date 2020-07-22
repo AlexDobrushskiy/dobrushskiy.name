@@ -14,7 +14,7 @@
       height: $image-width;
 
       img {
-        border-radius: calc(#{$image-width}/4);
+        border-radius: calc(#{$image-width} / 4);
         width: $image-width;
         height: $image-width;
       }
@@ -24,7 +24,7 @@
     .image-frame {
       margin-top: 33px;
       margin-left: calc(17px - #{$image-width});
-      border-radius: calc(#{$image-width}/4);
+      border-radius: calc(#{$image-width} / 4);
       min-width: $image-width;
       width: $image-width;
       height: $image-width;
@@ -45,12 +45,22 @@
   }
 
   .content {
-    display: flex;
+    @media (min-width: 768px) {
+      display: flex;
+    }
 
 
     .review {
-      margin-top: 136px;
-      margin-left: 56px;
+      @media (min-width: 768px) {
+        margin-top: 136px;
+        margin-left: 56px;
+      }
+      @media (max-width: 768px) {
+        margin-top: 36px;
+        width: 80%;
+        margin-left: 70px;
+      }
+
       max-width: 530px;
 
       p {
@@ -84,10 +94,12 @@
 </style>
 <div class="content">
 
-  <div class="image-wrapper">
-    <img src={reviewData.photo} alt="photo">
+  <div style="display: flex">
+    <div class="image-wrapper">
+      <img src={reviewData.photo} alt="photo">
+    </div>
+    <div class="image-frame"></div>
   </div>
-  <div class="image-frame"></div>
   <div class="review">
 
     <p>"{reviewData.reviewContent}"</p>

@@ -49,12 +49,6 @@
     color: var(--light-navy);
     margin-bottom: 0;
   }
-
-
-  /*.arrows {*/
-  /*  display: flex;*/
-  /*  margin-top: 20px;*/
-
   .circle-left, .circle-right {
     width: 49px;
     height: 49px;
@@ -74,8 +68,6 @@
   .circle-right {
     background-color: var(--light-navy);
   }
-
-  /*}*/
 
 
 </style>
