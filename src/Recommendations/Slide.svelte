@@ -45,13 +45,13 @@
   }
 
   .content {
-    @media (min-width: 768px) {
+    @media (min-width: 769px) {
       display: flex;
     }
 
 
     .review {
-      @media (min-width: 768px) {
+      @media (min-width: 769px) {
         margin-top: 136px;
         margin-left: 56px;
       }

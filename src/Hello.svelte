@@ -38,7 +38,7 @@
     @include image($image-width: 358px);
   }
 
-  @media (min-width: 768px) and (max-width: 991px) {
+  @media (min-width: 769px) and (max-width: 991px) {
     @include image($image-width: 277px);
   }
 
@@ -47,7 +47,7 @@
   }
 
   .main {
-    @media (min-width: 768px) {
+    @media (min-width: 769px) {
       display: flex;
     }
   }
@@ -59,10 +59,10 @@
   }
 
   .mobile {
-    @media (min-width: 768px) {
+    @media (min-width: 769px) {
       display: none;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       display: flex;
       margin-top: -200px;
     }

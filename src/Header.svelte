@@ -26,7 +26,7 @@
 
     img {
       height: 116px;
-      @media (min-width: 768px) and (max-width: 991px) {
+      @media (min-width: 769px) and (max-width: 991px) {
         width: 250px;
       }
     }
