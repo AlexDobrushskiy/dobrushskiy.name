@@ -1,6 +1,4 @@
 <script>
-  import Photo from '../assets/photo.jpg';
-  import BgImage from '../assets/bg1.jpg';
   import Skill from './Skill.svelte';
 
   let skills = [
@@ -51,6 +49,7 @@
   $image-width: 300px;
   .main {
     min-height: 777px;
+    background-image: url("/images/bg1.jpg");
     background-position: $left-shift;
     background-repeat: no-repeat;
     background-size: calc(100% - 50px);
@@ -60,6 +59,10 @@
     margin-left: $left-shift;
     margin-top: 20px;
     font-size: 48px;
+    @media (max-width: 768px) {
+      margin-left: 20px;
+      font-size: 9vw;
+    }
     color: var(--light-navy);
     margin-bottom: 0;
   }
@@ -79,6 +82,13 @@
     display: flex;
     width: 60%;
     min-width: 600px;
+    @media (max-width: 768px) {
+      min-width: 0;
+      width: 100%;
+      margin-left: 20px;
+      margin-top: 20px;
+    }
+
     justify-content: space-between;
 
     .col {
@@ -96,12 +106,12 @@
       display: none;
     }
     .col {
-      width: 70%;
+      width: 85%;
     }
 
   }
 </style>
-<div class="main" style="background-image: url({BgImage})" id="id-skills">
+<div class="main" id="id-skills">
   <h1>Skills</h1>
   <div class="skillbox desktop">
       <div class="col">

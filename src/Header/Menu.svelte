@@ -2,11 +2,10 @@
   let menuItems = ['Summary', 'Skills', 'Recommendations', 'Contacts'];
   let activeMenuItem = 0;
   let scrollInProgress = false;
-  import Circles from '../../assets/circles.png';
   import * as animateScroll from 'svelte-scrollto';
 
   const verticalOffset = 145;
-
+  let Circles = 'images/circles.png';
   const getYPosition = elId => {
     return document.getElementById(elId).getBoundingClientRect().y;
   };
@@ -62,7 +61,7 @@
     @media (max-width: 767px) {
       display: none;
     }
-
+    background-image: url("/images/circles.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 0 5px;
@@ -133,7 +132,7 @@
 
 <svelte:window on:scroll={onScroll}/>
 
-<div class="header-menu" style="background-image: url({Circles})">
+<div class="header-menu">
   <ul>
       {#each menuItems as item, idx}
         <li

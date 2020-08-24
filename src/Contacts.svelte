@@ -1,20 +1,28 @@
 <script>
-  import BgImage from '../assets/bg4.jpg';
   import MailIcon from '../assets/mail_icon.svg';
   import PhoneIcon from '../assets/phone_icon.svg';
   import Social from './Header/Social.svelte';
 </script>
 <style lang="scss">
+
   $left-shift: 68px;
   .main {
     min-height: 777px;
+    @media (max-width: 768px) {
+      min-height: 0;
+    }
     background-position: 600px -80px;
     background-repeat: no-repeat;
+    background-image: url("/images/bg4.jpg")
     /*background-size: calc(100% - 600px);*/
   }
 
   h1 {
     margin-left: $left-shift;
+    @media (max-width: 768px) {
+      margin-left: 20px;
+    }
+
     margin-top: 20px;
     font-size: 48px;
     color: var(--light-navy);
@@ -23,7 +31,12 @@
 
   p {
     margin-left: $left-shift;
+
     margin-top: 50px;
+    @media (max-width: 768px) {
+      margin-top: 20px;
+      margin-left: 20px;
+    }
     max-width: 600px;
     color: var(--black);
     font-size: 18px;
@@ -32,7 +45,14 @@
 
   .signature {
     display: flex;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
     margin-left: $left-shift;
+    @media (max-width: 768px) {
+      margin-left: 20px;
+    }
+
     margin-top: 20px;
     margin-bottom: 0;
 
@@ -46,6 +66,10 @@
 
   .contact {
     margin-left: $left-shift;
+    @media (max-width: 768px) {
+      margin-left: 20px;
+    }
+
     margin-top: 15px;
     font-size: 18px;
     font-weight: 300;
@@ -69,6 +93,10 @@
   }
   .contact-me {
     margin-left: $left-shift;
+    @media (max-width: 768px) {
+      margin-left: 20px;
+    }
+
     border-radius: 100px;
     height: 71px;
     background-color: var(--text-color-2);
@@ -84,7 +112,7 @@
   }
 </style>
 
-<div class="main" style="background-image: url({BgImage})" id="id-contacts">
+<div class="main" id="id-contacts">
   <h1>Contacts</h1>
   <p>Alex is always happy to discuss a new opportunities. Even he is occupied with another project at the moment - he can consult you regarding your project or advice someone to help with the development.
     <br/>

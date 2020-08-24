@@ -1,14 +1,16 @@
 <script>
-  import Logo from '../assets/logo.svg';
+
   import Menu from './Header/Menu.svelte';
   import Social from './Header/Social.svelte';
+
+  let Logo = 'images/logo.svg';
 </script>
 
 <style lang="scss">
   .header {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     background: var(--white);
@@ -28,6 +30,9 @@
       height: 116px;
       @media (min-width: 769px) and (max-width: 991px) {
         width: 250px;
+      }
+      @media  (max-width: 768px) {
+        width: 60vw;
       }
     }
   }

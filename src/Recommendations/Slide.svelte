@@ -9,6 +9,13 @@
     .image-wrapper {
       margin-top: 50px;
       margin-left: 68px;
+      @media (min-width: 451px) and (max-width: 768px) {
+        margin-top: 20px;
+        margin-left: 63px;
+      }
+      @media (max-width: 450px){
+        margin-left: 20px;
+      }
       /*position: relative;*/
       width: $image-width;
       height: $image-width;
@@ -24,6 +31,7 @@
     .image-frame {
       margin-top: 33px;
       margin-left: calc(17px - #{$image-width});
+
       border-radius: calc(#{$image-width} / 4);
       min-width: $image-width;
       width: $image-width;
@@ -55,16 +63,20 @@
         margin-top: 136px;
         margin-left: 56px;
       }
-      @media (max-width: 768px) {
-        margin-top: 36px;
-        width: 80%;
-        margin-left: 70px;
+      @media (min-width: 451px) and (max-width: 768px) {
+        margin-top: 10px;
+        width: 71%;
+        margin-left: 63px;
       }
+      @media (max-width: 450px) {
+        width: 85%;
+        margin-left: 20px;
 
+      }
       max-width: 530px;
 
       p {
-        font-size: 18px;
+        font-size: 15px;
         font-weight: 300;
         color: var(--black);
         font-style: italic;

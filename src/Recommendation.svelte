@@ -2,13 +2,13 @@
   import photoMike from '../assets/review_photos/mike.jpeg';
   import photoAlex from '../assets/review_photos/alex_b.jpeg';
   import photoThomas from '../assets/review_photos/thomas.jpeg';
-  import BgImage from '../assets/bg1.jpg';
   import Icon from 'fa-svelte';
   import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
   import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
   import Carousel from '@beyonk/svelte-carousel';
   import Slide from './Recommendations/Slide.svelte';
 
+  let BgImage = 'images/bg1.jpg';
   const reviewsData = [
     {
       photo: photoMike,
@@ -40,15 +40,25 @@
     background-position: 68px;
     background-repeat: no-repeat;
     background-size: calc(100% - 50px);
+    @media (max-width: 768px) {
+      min-height: 0;
+      background-position: 0;
+    }
   }
 
   h1 {
     margin-left: 68px;
     margin-top: 20px;
-    font-size: 48px;
+    font-size: 35px;
+    @media (max-width: 768px) {
+      margin-left: 20px;
+      font-size: 25px;
+    }
+
     color: var(--light-navy);
     margin-bottom: 0;
   }
+
   .circle-left, .circle-right {
     width: 49px;
     height: 49px;
@@ -69,9 +79,13 @@
     background-color: var(--light-navy);
   }
 
-
+  .circle-left, .circle-right {
+    @media (max-width: 450px) {
+      display: none;
+    }
+  }
 </style>
-<div class="main" style="background-image: url({BgImage})" id="id-recommendation">
+<div class="main" id="id-recommendation">
   <h1>Recommendations</h1>
   <Carousel perPage={1} duration={1000}>
       {#each reviewsData as reviewData}
