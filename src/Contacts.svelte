@@ -122,7 +122,7 @@
     <Social/>
   </div>
   <div class="contact">
-    <img src={PhoneIcon} alt="phone icon"> 7 920 039 32 89
+    <img src={PhoneIcon} alt="phone icon"> +351 932 367 175
   </div>
   <div class="contact">
     <img src={MailIcon} alt="mail icon"> a.dobrushskiy@gmail.com
